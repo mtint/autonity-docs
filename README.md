@@ -1,12 +1,21 @@
 # Autonity Documentation
 
-Documentation for the Autonity client using [Sphinx][1] and the [Read The Docs Sphinx Theme][2]
+Documentation for the Autonity client.
+
+[https://docs.autonity.io][1]
+
+Documentation is generated using [Sphinx][2] and the [Read The Docs Sphinx Theme][3]
+
+## Improving this documentation
+
+We welcome contributions and improvements to this documentation. You can find our [Contributing Guidelines][4] here.
 
 ## Installation
 
 You will need `python` and `pip` for the installation.
 
     pip install sphinx
+    pip install sphinx_rtd_theme
 
 Then you can clone the repository.
 
@@ -35,5 +44,7 @@ If you get an error like `/usr/bin/python: No module named SimpleHTTPServer` try
 
     python3 -m SimpleHTTPServer
 
-[1]: http://www.sphinx-doc.org/en/master/
-[2]: https://sphinx-rtd-theme.readthedocs.io/en/latest/
+[1]: https://docs.autonity.io
+[2]: http://www.sphinx-doc.org/en/master/
+[3]: https://sphinx-rtd-theme.readthedocs.io/en/latest/
+[4]: https://github.com/clearmatics/autonity-docs/blob/master/CONTRIBUTING.md
