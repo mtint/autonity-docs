@@ -1,16 +1,18 @@
-branches:
-  only:
-    - master
-language: go
-matrix:
-  include:
-    - os: linux
-      dist: xenial
-      sudo: false
-      install:
-        - pip install awscli --user
-        - mkdir ${HOME}/.aws
-        - echo $AWSCRED | base64 --decode -i > ${HOME}/.aws/credentials
-        - aws s3 ls s3://autonity.io
-      on:
-        branch: master
+language: python
+python:
+  - "3.5"
+cache: pip
+install:
+  - pip install awscli
+script:
+  - make html
+deploy:
+  on:
+    branch: master
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: docs.autonity.io
+  skip_cleanup: true
+  local_dir: _build/html
+  cache_control: "max-age=21600"
