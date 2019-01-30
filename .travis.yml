@@ -1,4 +1,3 @@
-#ok
 language: python
 python:
   - "3.5"
