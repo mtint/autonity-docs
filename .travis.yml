@@ -3,12 +3,10 @@ python:
   - "3.5"
 cache: pip
 install:
-  - pip install awscli
+  # - pip install awscli
   - pip install sphinx
   - pip install sphinx_rtd_theme
 script:
-  - pwd
-  - ls -lha
   - make html
 deploy:
   on:
