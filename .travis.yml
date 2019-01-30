@@ -3,7 +3,6 @@ python:
   - "3.5"
 cache: pip
 install:
-  # - pip install awscli
   - pip install sphinx
   - pip install sphinx_rtd_theme
 script:
@@ -16,5 +15,5 @@ deploy:
   secret_access_key: $AWS_SECRET_ACCESS_KEY
   bucket: docs.autonity.io
   skip_cleanup: true
+  region: eu-west-1
   local_dir: _build/html
-  cache_control: "max-age=21600"
