@@ -8,10 +8,9 @@ matrix:
       dist: xenial
       sudo: false
       install:
+        - pip install awscli --user
         - mkdir ${HOME}/.aws
         - echo $aws_cli_credentials | base64 --decode -i > ${HOME}/.aws/credentials
-        - pip install awscli --user
-        # - aws s3 ls s3://autonity.io
-        - cat ${HOME}/.aws/credentials
+        - aws s3 ls s3://autonity.io
       on:
         branch: master
