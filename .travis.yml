@@ -10,6 +10,7 @@ matrix:
       install:
         - mkdir ${HOME}/.aws
         - echo $aws_cli_credentials | base64 --decode -i > ${HOME}/.aws/credentials
+        - pip install --upgrade pip
         - pip install awscli
         - aws s3 ls s3://autonity.io
       on:
