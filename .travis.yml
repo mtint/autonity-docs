@@ -4,6 +4,8 @@ python:
 cache: pip
 install:
   - pip install awscli
+  - pip install sphinx
+  - pip install sphinx_rtd_theme
 script:
   - pwd
   - ls -lha
