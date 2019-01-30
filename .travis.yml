@@ -1,5 +1,16 @@
-deploy:
-  provider: script
-  script: bash scripts/deploy.sh
-  on:
-    branch: master
+branches:
+  only:
+    - master
+language: go
+matrix:
+  include:
+    - os: linux
+      dist: xenial
+      sudo: true
+      install:
+        - mkdir ${HOME}/.aws
+        - echo $aws_cli_credentials | base64 --decode -i > ${HOME}/.aws/credentials
+        - pip install awscli
+        - aws s3 ls s3://autonity.io
+      on:
+        branch: master
