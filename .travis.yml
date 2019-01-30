@@ -11,6 +11,7 @@ matrix:
         - mkdir ${HOME}/.aws
         - echo $aws_cli_credentials | base64 --decode -i > ${HOME}/.aws/credentials
         - pip install awscli --user
-        - aws s3 ls s3://autonity.io
+        # - aws s3 ls s3://autonity.io
+        - echo "ok"
       on:
         branch: master
