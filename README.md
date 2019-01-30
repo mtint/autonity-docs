@@ -44,6 +44,7 @@ If you get an error like `/usr/bin/python: No module named SimpleHTTPServer` try
 
     python3 -m SimpleHTTPServer
 
+
 [1]: https://docs.autonity.io
 [2]: http://www.sphinx-doc.org/en/master/
 [3]: https://sphinx-rtd-theme.readthedocs.io/en/latest/
