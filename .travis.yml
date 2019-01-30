@@ -5,6 +5,8 @@ cache: pip
 install:
   - pip install awscli
 script:
+  - pwd
+  - ls -lha
   - make html
 deploy:
   on:
