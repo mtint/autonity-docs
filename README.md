@@ -42,7 +42,7 @@ You can use any HTTP server to view the site in a browser. A simple way is
 
 If you get an error like `/usr/bin/python: No module named SimpleHTTPServer` try this 
 
-    python3 -m SimpleHTTPServer
+    python3 -m http.server
 
 
 [1]: https://docs.autonity.io
