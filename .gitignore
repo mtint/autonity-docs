@@ -6,6 +6,7 @@
 .dir-locals.el
 .cache/
 .idea
+.vscode
 .mypy_cache/
 .pytest_cache/
 .ropeproject/
