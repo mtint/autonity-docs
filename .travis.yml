@@ -17,4 +17,4 @@ deploy:
   skip_cleanup: true
   region: eu-west-1
   local_dir: _build/html
-  cache_control: "max-age=21600"
+  cache_control: "max-age=120"
