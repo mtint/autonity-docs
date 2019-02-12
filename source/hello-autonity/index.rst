@@ -9,7 +9,7 @@ First clone the Hello Autonity repository
 
 ::
 
-   git clone git@github.com:clearmatics/hello-autonity.git
+   git clone https://github.com/clearmatics/hello-autonity.git
 
 Change directory in repository you have just cloned
 
