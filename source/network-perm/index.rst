@@ -1,11 +1,13 @@
 P2P Network Permissioning
 ====================================
 
-Autonity supports the need of network permissioning in private blockchains leveraging a smart contract based oracle which manages which nodes can access the network.
-
+Autonity supports network permissioning in private blockchains by leveraging a smart contract which manages which nodes can access the network.
+Keeping a consistent state of the list of members of nodes is technically feasible due to the finality property (i.e. no forks) of BFT-like consensus protocols
+used by the Autonity client.
 The restriction of access to the ledger can be tackled at different layers of the network stack and providing various levels of access to the nodes in the network.
-
-The main network and protocol layers at which the permissioning can be implemented are TCP/IP level and below (e.g. physical level), DevP2P, Ethereum Service protocol level or at the sub-protocol level (e.g. Ethereum v.63). In terms of the level of access granted, the members of the network may be able to read the contents of the ledger (i.e. blockchain observers), append blocks into the chain (i.e. miners or validators) and send transactions to be inserted in blocks by the validators.
+The main network and protocol layers at which the permissioning can be implemented are TCP/IP level and below (e.g. physical level), DevP2P, Ethereum Service protocol level or at the sub-protocol
+level (e.g. Ethereum v.63). In terms of the level of access granted, the members of the network may be able to read the contents of the ledger (i.e. blockchain observers), append blocks into
+the chain (i.e. miners or validators) and send transactions to be inserted in blocks by the validators.
 
 In our first release, our solution targets the restriction of read-access to the blockchain implementing minimal light modifications at the Ethereum protocol level.
 
@@ -54,13 +56,26 @@ members will close connections with the node.
 Implementation Details and Limitations
 ----------------------------------------
 
-Implementation details:
+**API of the Network permissioning contract.**
+TBD
+- `getNetworkMembers(blockNumber uint64)`
+- `getNetworkMemberByHash(...)`
+- `getGlienickeContractAddress()`
 
-- Expose contract interface.
-- Describe how the contract is deployed.
-- Describe changes on the Eth protocol.
-- Etc.
+**Deployment of the contract.**
 
-|
+- 1. The smart contract logic is defined at network deployment time by including the Solidity contract
+bytecode at the Genesis file along with the initial whitelisted nodes.
+- 2. The Autonity protocol deploys automatically the smart contract at block #1.
+- 3. Each member retrieve the current state of the whitelist after each mined block (i.e. once per block height) and
+enforces the addition/removal of peers.
 
-**limitation:** of permissioning access to private blockchain when one malicious node act as a relayer.
+**Changes on the Eth protocol.**
+TBC
+
+**Limitations.**
+
+- A malicious member of the whitelist can always act as a relayer of the contents of the ledgers and txs on the network.
+This behavior is unavoidable. However, if this relay of information is made through a public channel, using cryptographic
+primites to enforce non-repudiation may lead to the removal of the rogue peer from the whitelist. This feature is in the
+Autonity roadmap but not yet implemented.
