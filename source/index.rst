@@ -18,10 +18,9 @@ Get started by running the Autonity Hello World that will allow you to run a loc
    :maxdepth: 3
 
    hello-autonity/index.rst
-   design-goals/index.rst
-   getting-started/index.rst
    network-perm/index-nw.rst
    IBFT/index.rst
+   ion/index.rst
 
 
 .. note:: Have a question? You can reach the Autonity team on Github_ or in the `Autonity Gitter`_ channel.

@@ -1,15 +1,15 @@
 Ion
 ====================================
 
-The Ion Interoperability Framework is an interoperability protocol that supports the trustless transfer of state and value between Ethereum and non-Ethereum chains. In conjunction with a deterministic consensus algorithm Ion can model PvP and DvP use cases with deterministic finality. Non-deterministic consensus algorithms are also supported.
+Ion_ is a platform agnostic interoperability framework. It allows state and value to be transferred between disparate blockchains without the need for an intermediary token or a trusted intermediary.
 
 The Ion project currently has validation contracts for 
 
-- Ethereum IBPFT
-- Ethereum Clique
+- Clique (Ethereum)
+- IPBFT (Ethereum)
 - Hyperledger
 
-The Ion_ Github repository contains a full example of interoperating between Rinkeby and a local Ethereum chain. The `Simple Shares`_ example shows a full implementation of a DvP flow modeling issuance of a security on Hyperledger Fabric network and settling a transaction on an Ethereum network.
+The Ion_ Github repository has a full example of transfering value between a local test chain and Rinkeby. The `Simple Shares`_ example shows a full DvP flow, modelling the issuance of a security on Hyperledger and the settlement of a trade on an Ethereum chain. 
 
 .. _Ion: https://www.github.com/clearmatics/ion/
-.. _Simple Shares: https://github.com/clearmatics/simpleshares
+.. _Simple Shares: https://www.github.com/clearmatics/simpleshares/

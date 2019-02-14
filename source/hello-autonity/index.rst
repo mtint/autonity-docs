@@ -9,19 +9,19 @@ First clone the Hello Autonity repository
 
 ::
 
-   git clone git@github.com:clearmatics/hello-autonity.git
+   git clone git@github.com:clearmatics/autonity.git
 
 Change directory in repository you have just cloned
 
 ::
 
-   cd hello-autonity
+   cd helloworld
 
 Start the network
 
 ::
 
-   docker-compose up
+   docker-compose up -d
 
 .. _docker: https://www.docker.com/
 .. _docker-compose: https://docs.docker.com/compose/
