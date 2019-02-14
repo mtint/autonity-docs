@@ -52,8 +52,8 @@ and DevP2P level to avoid the need of using bootnodes or static nodes. Autonity 
 setup connections with the new additions of the list. At the same time, when a node is removed from the list, the remaining
 members will close connections with the node.
 
-Implementation Details and Limitations
-----------------------------------------
+Implementation Details
+---------------------------
 
 **API of the Network permissioning contract.**
 
