@@ -34,7 +34,8 @@ that can be defined at the contract level are:
 Implementation Details
 ------------------------
 
-**Soma Interfaces.**
+**Soma Contract Interface**
+
 The Soma governance contract **must** define a number of properties and interfaces to allow communication with the consensus layer.
 
 .. note:: The following interface is Solidity specific however other Smart contract languages can be used.
@@ -57,9 +58,9 @@ The Soma governance contract **must** define a number of properties and interfac
         return validators;
     }
 
-For the consensus layer to be able to access the validator whitelist a function `getValidators()` must be implemented that returns the property `validators` containing the whitelist of validators. It is up to users to decide how to implement functions governing this whitelist.
+For the consensus layer to be able to access the validator whitelist a function ``getValidators()`` must be implemented that returns the property ``validators`` containing the whitelist of validators. It is up to users to decide how to implement functions governing this whitelist.
 
-**Deploying Soma.**
+**Deploying Soma**
 
 1. The smart contract logic is defined at network deployment time by including the Solidity contract bytecode at the Genesis file along with the initial whitelisted nodes.
 2. The Autonity protocol deploys automatically the smart contract at block #1.
@@ -79,8 +80,18 @@ To use Soma three additional fields must be added the config of the `genesis.jso
             "Deployer": "0x1337000000000000000000000000000000000000"
         }
         ...
-    }  
+    }
 
 The bytecode and ABI must be generated from the same compiled smart contract. The deployed *may* be important to the smart contract logic however by design Soma is unopionated, natively it only has the effect of determining the address at which the contract is deployed at.
 
-.. _glienicke.rst:
+**Soma Contract API**
+
+In addition to the standard JSON RPC API of Geth_, Autonity console implements the following of IPC methods for nodes
+to retrieve information from the Soma contract via ``web3``:
+
+``istanbul.getValidators(<0x + blockNumber>)`` retrieves the validator set at a given block height.
+``ìstanbul.getValidatorsAtHash(<blockHash>)`` retrieves the validator set given the hash of a block.
+``istanbul.getSomaContractAddress()`` returns the address of the Soma contract.
+
+.. _Glienicke: http://docs.autonity.io/network-perm/glienicke.html
+.. _Geth: https://github.com/ethereum/wiki/wiki/JSON-RPC

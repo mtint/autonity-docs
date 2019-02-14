@@ -55,7 +55,7 @@ members will close connections with the node.
 Implementation Details
 ---------------------------
 
-**Glienicke contract interface.**
+**Glienicke Contract Interface**
 
 
 The Glienicke governance contract **must** define a number of properties and interfaces to allow communication with the consensus layer.
@@ -63,6 +63,7 @@ The Glienicke governance contract **must** define a number of properties and int
 .. note:: The following interface is Solidity specific however other Smart contract languages can be used.
 
 .. code-block:: javascript
+
     contract Glienicke {
         string[] public enodes;
         // constructor get called at block #1 with msg.owner equal to Glienicke's deployer
@@ -77,7 +78,7 @@ The Glienicke governance contract **must** define a number of properties and int
         }
     }
 
-**Deployment of the contract.**
+**Deployment of the Contract**
 
 1. The smart contract logic is defined at network deployment time by including the Solidity contract bytecode at the Genesis file along with the initial whitelisted nodes.
 2. The Autonity protocol deploys automatically the smart contract at block #1.
@@ -102,7 +103,7 @@ To use Glienicke, various additional fields must be added the config of the ``ge
 
 .. note:: The enodes whitelist above are just an example of a possible initial network member set.
 
-**Limitations.**
+**Limitations**
 
 - A malicious member of the whitelist can always act as a relayer of the contents of the ledgers and txs on the network [#]_.
 
