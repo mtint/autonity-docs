@@ -11,6 +11,7 @@ Autonity
 
    introduction/index.rst
    getting-started/index.rst
+   network-perm/soma.rst
    network-perm/index.rst
    installation/index.rst
    glossary/index.rst
