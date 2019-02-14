@@ -19,7 +19,6 @@ Get started by running the Autonity Hello World that will allow you to run a loc
 
    hello-autonity/index.rst
    design-goals/index.rst
-   introduction/index.rst
    getting-started/index.rst
    network-perm/index-nw.rst
    IBFT/index.rst
