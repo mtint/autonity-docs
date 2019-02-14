@@ -16,14 +16,12 @@ Get started by running the Autonity Hello World that will allow you to run a loc
 
 .. toctree::
    :maxdepth: 3
+
    hello-autonity/index.rst
    design-goals/index.rst
    introduction/index.rst
    getting-started/index.rst
    network-perm/index-nw.rst
-   installation/index.rst
-   glossary/index.rst
-   tutorials/index.rst
    IBFT/index.rst
 
 
