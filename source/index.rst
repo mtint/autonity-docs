@@ -7,12 +7,11 @@ Autonity
 ====================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    introduction/index.rst
    getting-started/index.rst
-   network-perm/soma.rst
-   network-perm/index.rst
+   network-perm/index-nw.rst
    installation/index.rst
    glossary/index.rst
    tutorials/index.rst

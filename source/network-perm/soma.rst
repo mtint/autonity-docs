@@ -1,4 +1,4 @@
-Soma Validator Governance
+Soma - Validator Governance
 ====================================
 
 Autonity adds the ability of users to govern the validators on a network through a smart contract, Soma, deployed upon network initialisation. 
@@ -7,7 +7,7 @@ Soma restricts who has the ability to create and validate blocks on the network.
 
 Currently Soma is only available for the IBFT consensus mechanism in Autonity.
 
-Design Rationale
+Design Goals
 ----------------
 
 Soma design goals are:
