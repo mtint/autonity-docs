@@ -37,11 +37,21 @@ Implementation Details
 **Soma Interfaces.**
 The Soma governance contract **must** define a number of properties and interfaces to allow communication with the consensus layer.
 
-**Note:** the following interfaces are Solidity specific however other Smart contract languages can be used.
+.. note:: The following interface is Solidity specific however other Smart contract languages can be used.
 
 .. code-block:: javascript
-    
+
+    contract Soma {
+
     address[] public validators;
+
+    // constructor get called at block #1 with msg.owner equal to Soma's deployer
+    // configured in the genesis file.
+    constructor (address[] _validators) public {
+        for (uint256 i = 0; i < _validators.length; i++) {
+            validators.push(_validators[i]);
+        }
+    }
 
     function getValidators() public view returns (address[]) {
         return validators;
