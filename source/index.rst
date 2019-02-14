@@ -15,6 +15,7 @@ Autonity
    installation/index.rst
    glossary/index.rst
    tutorials/index.rst
+   IBFT/index.rst
 
 
 .. note:: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu turpis ut velit suscipit lobortis. Sed ornare justo odio, sollicitudin mollis ligula ullamcorper non. Mauris rhoncus purus eget nibh elementum, at commodo nisl iaculis.
