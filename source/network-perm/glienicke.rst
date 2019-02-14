@@ -67,8 +67,24 @@ Implementation Details
 2. The Autonity protocol deploys automatically the smart contract at block #1.
 3. Each member retrieve the current state of the whitelist after each mined block (i.e. once per block height) and enforces the addition/removal of peers.
 
-**Changes on the Eth protocol.**
-TBC
+To use Glienicke, various additional fields must be added the config of the `genesis.json` which define the Glienicke contracts binary, ABI and the contract deployer:
+
+.. code-block:: json
+
+    {
+        "chainId": 1991,
+        "enodeWhitelist": [
+            "enode://d6d330f5e39f8128156483718710d6b6a4668c94734f3d6cf173b25fdb3317a1266865858d7385114ee3540711b250cf97bc0f0e4760bdd942e58dfa2dceace0@127.0.0.1:5000",
+            "enode://f1abb7699464af226fa9bd8536d24fe99c4144039ad61ef87718d759df6c331b3349663048c57bc6d6c7daa2c2701d4b37380c4a85321fbcce500c5c8570e7c5@127.0.0.1:5001",
+            "enode://d158607dc6fd4d0d6fa2eb0d67043eddad67a51640705d6e5bec39d023d145dce714953f079cd5277c4b22435f6c81496147c4742b1922c965b48f2a529bdf75@127.0.0.1:5002",
+            "enode://fd021d2af2ba76d0a9f806abfa62c7fba691fb05ae27938f580345fac7e47ed585b2605df21d356b3b37e5940e53b840f15d70cc6b7b585eb706473f0234cb11@127.0.0.1:5003"
+        ],
+        "glienickeDeployer": "0x0000000000000000000000000000000000000001",
+        "glienickeBytecode": "",
+        "glienickeABI": ""
+    }
+
+.. note:: The enodes whitelist above are just an example of a possible initial network member set.
 
 **Limitations.**
 
