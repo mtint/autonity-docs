@@ -45,9 +45,9 @@ that can be defined at the contract level are:
 
 **Absence of Bootnodes**
 It is common practice in public blockchains to use bootnodes or static nodes as bridges to P2P networks. A bootnode is
-a node which is always running and available to relay peers information to new nodes.
+a node which is always running and available to relay peers' information to new nodes.
 However, in a private blockchain relying in the use of bootnodes would mean that some nodes have privileges over the others,
-as static nodes could not be removed from the whitelist. Our solution leverages light modifications at the Etehereum protocol
+as static nodes could not be removed from the whitelist. Our solution leverages light modifications at the Ethereum protocol
 and DevP2P level to avoid the need of using bootnodes or static nodes. Autonity lets the members of the whitelist dial and
 setup connections with the new additions of the list. At the same time, when a node is removed from the list, the remaining
 members will close connections with the node.
