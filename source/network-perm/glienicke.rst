@@ -55,19 +55,36 @@ members will close connections with the node.
 Implementation Details
 ---------------------------
 
-**API of the Network permissioning contract.**
+**Glienicke Contract Interface**
 
- ``getNetworkMembers(blockNumber uint64)``
- ``getNetworkMemberByHash(...)``
- ``getGlienickeContractAddress()``
 
-**Deployment of the contract.**
+The Glienicke governance contract **must** define a number of properties and interfaces to allow communication with the consensus layer.
+
+.. note:: The following interface is Solidity specific however other Smart contract languages can be used.
+
+.. code-block:: javascript
+
+    contract Glienicke {
+        string[] public enodes;
+        // constructor get called at block #1 with msg.owner equal to Glienicke's deployer
+        // configured in the genesis file.
+        constructor (string[] _genesisEnodes) public {
+            for (uint256 i = 0; i < _genesisEnodes.length; i++) {
+                enodes.push(_genesisEnodes[i]);
+            }
+        }
+        function getWhitelist() public view returns (string[]) {
+            return enodes;
+        }
+    }
+
+**Deployment of the Contract**
 
 1. The smart contract logic is defined at network deployment time by including the Solidity contract bytecode at the Genesis file along with the initial whitelisted nodes.
 2. The Autonity protocol deploys automatically the smart contract at block #1.
 3. Each member retrieve the current state of the whitelist after each mined block (i.e. once per block height) and enforces the addition/removal of peers.
 
-To use Glienicke, various additional fields must be added the config of the `genesis.json` which define the Glienicke contracts binary, ABI and the contract deployer:
+To use Glienicke, various additional fields must be added the config of the ``genesis.json`` which define the Glienicke contracts binary, ABI and the contract deployer:
 
 .. code-block:: json
 
@@ -86,7 +103,7 @@ To use Glienicke, various additional fields must be added the config of the `gen
 
 .. note:: The enodes whitelist above are just an example of a possible initial network member set.
 
-**Limitations.**
+**Limitations**
 
 - A malicious member of the whitelist can always act as a relayer of the contents of the ledgers and txs on the network [#]_.
 
