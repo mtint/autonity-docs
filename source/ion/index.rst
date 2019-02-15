@@ -7,9 +7,9 @@ The Ion project currently has validation contracts for
 
 - Clique (Ethereum)
 - IPBFT (Ethereum)
-- Hyperledger
+- Hyperledger Fabric
 
-The Ion_ Github repository has a full example of transfering value between a local test chain and Rinkeby. The `Simple Shares`_ example shows a full DvP flow, modelling the issuance of a security on Hyperledger and the settlement of a trade on an Ethereum chain. 
+The Ion_ Github repository has a full example of transfering value between a local test chain and Rinkeby. The `Simple Shares`_ example shows a simplified conceptual DvP flow, modelling the issuance of a security on Fabric and the settlement of the cash leg of a trade on an Ethereum chain. 
 
 .. _Ion: https://www.github.com/clearmatics/ion/
 .. _Simple Shares: https://www.github.com/clearmatics/simpleshares/

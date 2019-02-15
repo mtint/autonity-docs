@@ -9,8 +9,7 @@ Autonity
 Autonity is a generalisation of the `Ethereum Protocol`_ adding several features that make it applicable for permissioned networks. 
 
 Autonity supports deterministic finality, and the ability to permission validators and network access. 
-
-Autonity also forms part of a protocol suite with Ion_, an interoperabillity protocol, to support interoperability between Ethereum and non-Ethereum chains. 
+Autonity works in harmony with Ion_, a general interoperabillity framework, to support interoperability between Ethereum chains, and even Ethereum and non-Ethereum platforms.
 
 Get started by running the Autonity Hello World that will allow you to run a local Autonity network in about two minutes. 
 

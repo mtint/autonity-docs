@@ -82,7 +82,7 @@ To use Soma three additional fields must be added the config of the `genesis.jso
         ...
     }
 
-The bytecode and ABI must be generated from the same compiled smart contract. The deployed *may* be important to the smart contract logic however by design Soma is unopionated, natively it only has the effect of determining the address at which the contract is deployed at.
+The bytecode and ABI must be generated from the same compiled smart contract. The deployer *may* be important to the smart contract logic however by design Soma is unopionated, natively it only has the effect of determining the address at which the contract is deployed at.
 
 **Soma Contract API**
 
