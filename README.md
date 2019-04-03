@@ -12,18 +12,17 @@ We welcome contributions and improvements to this documentation. You can find ou
 
 ## Installation
 
-You will need `python` and `pip` for the installation.
+You will need to clone the repository.
 
-    pip install sphinx
-    pip install sphinx_rtd_theme
-
-Then you can clone the repository.
-
-    git clone git@github.com/clearmatics/autonity-docs
+    git clone git@github.com:clearmatics/autonity-docs.git
 
 Change into the `autonity-docs` directory
 
     cd autonity-docs
+
+Than you will need `python` and `pip` for the installation:
+
+    make install
 
 ## Generating HTML
 
@@ -37,13 +36,13 @@ The html is generated into `_build/html`.
 
 You can use any HTTP server to view the site in a browser. A simple way is
 
-    cd _build/html
-    python -m SimpleHTTPServer
+    make start
 
 If you get an error like `/usr/bin/python: No module named SimpleHTTPServer` try this 
 
     python3 -m http.server
 
+Than you can open the documentation in your browser `localhost:8000`
 
 [1]: https://docs.autonity.io
 [2]: http://www.sphinx-doc.org/en/master/

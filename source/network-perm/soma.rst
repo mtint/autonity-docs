@@ -71,15 +71,13 @@ To use Soma three additional fields must be added the config of the `genesis.jso
 .. code-block:: json
 
     {
-        ...
         "istanbul" : {
             "epoch": 30000,
             "policy": 0,
             "Bytecode": "608060405234801561001057...",
-            "ABI": `[{"constant":false,"inputs": ...}]`,
+            "ABI": "[{'constant':false,'inputs': ...}]",
             "Deployer": "0x1337000000000000000000000000000000000000"
         }
-        ...
     }
 
 The bytecode and ABI must be generated from the same compiled smart contract. The deployer *may* be important to the smart contract logic however by design Soma is unopionated, natively it only has the effect of determining the address at which the contract is deployed at.

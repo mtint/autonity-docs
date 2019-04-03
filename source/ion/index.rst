@@ -6,7 +6,7 @@ Ion_ is a platform agnostic interoperability framework. It allows state and valu
 The Ion project currently has validation contracts for 
 
 - Clique (Ethereum)
-- IPBFT (Ethereum)
+- IBFT (Ethereum)
 - Hyperledger Fabric
 
 The Ion_ Github repository has a full example of transfering value between a local test chain and Rinkeby. The `Simple Shares`_ example shows a simplified conceptual DvP flow, modelling the issuance of a security on Fabric and the settlement of the cash leg of a trade on an Ethereum chain. 
