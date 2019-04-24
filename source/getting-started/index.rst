@@ -8,9 +8,9 @@ Prerequisites
 
 To follow this tutorial you will need a basic understanding of using a terminal. In terms of software prerequsites you will need 
 
-- git `Installation <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`
-- minikube `Installation <https://kubernetes.io/docs/tasks/tools/install-minikube/>`
-- helm `Installation <https://helm.sh/docs/using_helm/#installing-helm>`
+- git `Installation <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
+- minikube `Installation <https://kubernetes.io/docs/tasks/tools/install-minikube/>`_
+- helm `Installation <https://helm.sh/docs/using_helm/#installing-helm>`_
 
 From the terminal ensure that everything was correctly installed. 
 
