@@ -6,5 +6,6 @@ It’s a simple tutorial how to run your own Autonity permissioned cluster and u
 .. toctree::
    :maxdepth: 2
 
-   ../deploy/compose/compose.rst
-   ../deploy/compose/api.rst
+   compose.rst
+   api.rst
+

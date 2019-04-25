@@ -6,5 +6,4 @@ You can deploy Autonity network using docker-compose or deploy it to kubernetes 
 .. toctree::
    :maxdepth: 1
 
-   compose/index.rst
    kubernetes/index.rst
