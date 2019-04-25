@@ -14,7 +14,7 @@ Autonity works in harmony with Ion_, a general interoperabillity framework, to s
 Get started by running the Autonity Hello World that will allow you to run a local Autonity network in about two minutes. 
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
 
    hello-autonity/index.rst
    network-perm/index-nw.rst
