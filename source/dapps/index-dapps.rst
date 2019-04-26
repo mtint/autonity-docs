@@ -2,16 +2,29 @@
 Decentralised Applications (DApps)
 ===========================================
 
-The Autonity client approach to network permissioning leverages the use of smart contracts to manage the validator set and the nodes which have access to the network.
-This form of on-chain governance enables the deployer of a private blockchain to fully customize the governance mechanism of the network.
+Our DApps provide an interface to manage an Autonity network, consisting of at least four validators. The permissioning of a network is based on both validator governance
+and P2P permissioning. The smart contracts in charge of this are `Soma <https://docs.autonity.io/network-perm/soma.html>`_ and `Glienicke <https://docs.autonity.io/network-perm/glienicke.html>`_, respectively.
 
-Autonity network permissioning features follow a modular architecture, composed by two main components: **Soma**, which manages the validator set governance and **Glienicke**,
-that controls the node permissioning at the P2P network level.
+Both DApps have similar characteristics but there are important differences between them. These can be summarised as follows:
 
+Similarities
+------------
+- An abilitiy to add and remove nodes
+- An interface which allows the use of a custom protocol
+- An interface to deny or allow connection from a peer
+
+Differences
+-----------
+- Soma restricts access to participate in the consensus mechanism
+- Glienicke restricts connection access and ability to interact with the network
+- All validators are observers but an observer is not necessarily a validator
+
+Guides: Installation
+--------------------
 .. toctree::
    :maxdepth: 1
 
    validator.rst
    observer.rst
 
-.. note:: This is a note
+.. note:: Both of the DApps can also be found on our Github page: `Validator <https://github.com/clearmatics/validator-dapp>`_ and `Observer <https://github.com/clearmatics/observer-dapp>`_ 
