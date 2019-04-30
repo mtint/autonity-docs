@@ -18,9 +18,9 @@ Get started by running the Autonity Hello World that will allow you to run a loc
 
    hello-autonity/index.rst
    network-perm/index-nw.rst
-   IBFT/index.rst
+   dapps/index-dapps.rst
    ion/index.rst
-
+   IBFT/index.rst
 
 .. note:: Have a question? You can reach the Autonity team on Github_ or in the `Autonity Gitter`_ channel.
 
