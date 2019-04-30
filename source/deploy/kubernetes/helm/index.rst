@@ -6,3 +6,4 @@ Helm chart
 
    install.rst
    configure.rst
+   subcharts/index.rst
