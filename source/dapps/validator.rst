@@ -4,15 +4,15 @@ Validator DApp
 The Validator DApp provides an interface to manage the validator set of nodes. To manage this set, it is possible to
 add and remove nodes. To identify nodes, the `account address <https://github.com/ethereum/go-ethereum/wiki/Managing-your-accounts>`_ is used.
 
-.. note:: MetaMask is having issues running on Firefox. This bug was reported back in August 2018 and we're awaiting a fix. Until then please use Chrome.
-
 
 Prerequisites
 ---------------
 * `Git <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
 * `MetaMask (Chrome) <https://metamask.io/>`_
-* `Docker <https://docs.docker.com/install/>`_ (Option 1)
+* `Docker <https://docs.docker.com/get-started/>`_ (Option 1)
 * `npm <https://www.npmjs.com/get-npm>`_ (Option 2)
+
+.. note:: MetaMask is having issues running on Firefox. This bug was reported back in August 2018 and we're awaiting a fix. Until then please use Chrome.
 
 
 Start the DApp
@@ -106,6 +106,24 @@ you should see a popup window from MetaMask asking you to confirm your transacti
 
 When you do want to perform an actual change in the permissioning, you need to press *Confirm* to propagate your submission to the network.
 
+
+Node management verification
+----------------------------
+Apart from the ability to display the current set of validators (or observers) through the user interface, we can verify it by network logs. In this example, we have filtered for any changes in the validator set. Before we make any changes to the permissioning,
+we have 7 validators and the full set can seen in the logs as follows:
+
+.. literalinclude:: all-validators-logs.txt
+    :emphasize-lines: 2
+
+After we have issued a request to remove the second validator through the DApp interface, we can see that the validator set has changed (and its size): 
+
+.. literalinclude:: one-less-validator-logs.txt
+    :emphasize-lines: 2
+
+Finally, we add the same validator back to return to our initial state:
+
+.. literalinclude:: back-to-all-validators-logs.txt
+    :emphasize-lines: 3
 
 
 Next steps
