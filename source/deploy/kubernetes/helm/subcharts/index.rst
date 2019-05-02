@@ -9,3 +9,4 @@ Helm subcharts
    autonity.rst
    ethstats.rst
    prometheus.rst
+   grafana.rst

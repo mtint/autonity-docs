@@ -2,7 +2,7 @@ Helm chart
 ====================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    install.rst
    configure.rst

@@ -1,4 +1,4 @@
-Prometheus
+Prometheus (optional)
 =========================================
 
 `Prometheus helm chart`_   deploy Prometheus_ monitoring system.
