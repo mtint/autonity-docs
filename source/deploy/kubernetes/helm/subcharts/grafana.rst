@@ -41,6 +41,12 @@ Usage
 
 What does each metrics means you can read in `wiki article Metrics-and-Monitoring`_
 
+Alerting
+~~~~~~~~
+
+1. Configure `notification channel`_
+2. Configure `Alerting Rules`_ for your dashboard
+
 How is it works?
 ~~~~~~~~~~~~~~~~
 * After installation grafana will use datasource Prometheus from prometheus subchart
@@ -51,3 +57,5 @@ How is it works?
 .. _values.yaml: https://github.com/clearmatics/autonity-helm/blob/master/values.yaml
 .. _Grafana helm chart: https://github.com/helm/charts/tree/master/stable/grafana
 .. _wiki article Metrics-and-Monitoring: https://github.com/clearmatics/autonity/wiki/Metrics-and-Monitoring
+.. _notification channel: https://grafana.com/docs/alerting/notifications/
+.. _Alerting Rules: https://grafana.com/docs/alerting/rules/

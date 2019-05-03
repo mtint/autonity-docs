@@ -5,7 +5,7 @@ In a folder where you keep code clone the Autonity helm repository
 
 .. code:: bash
 
-    git clone https://github.com/clearmatics/autonity-helm.git -b v0.4.1
+    git clone https://github.com/clearmatics/autonity-helm.git -b v0.4.2
     cd autonity-helm
     helm dependency update
     helm install -n autonity-platform ./
