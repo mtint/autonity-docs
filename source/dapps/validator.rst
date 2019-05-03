@@ -7,6 +7,7 @@ add and remove nodes. To identify nodes, the `account address <https://github.co
 
 Prerequisites
 ---------------
+* An active `Autonity <https://docs.autonity.io/hello-autonity/compose.html>` network
 * `Git <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
 * `MetaMask (Chrome) <https://metamask.io/>`_
 * `Docker <https://docs.docker.com/get-started/>`_ (Option 1)

@@ -14,13 +14,14 @@ Autonity works in harmony with Ion_, a general interoperabillity framework, to s
 Get started by running the Autonity Hello World that will allow you to run a local Autonity network in about two minutes. 
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    hello-autonity/index.rst
    network-perm/index-nw.rst
-   dapps/index-dapps.rst
-   ion/index.rst
    IBFT/index.rst
+   ion/index.rst
+   deploy/index.rst
+
 
 .. note:: Have a question? You can reach the Autonity team on Github_ or in the `Autonity Gitter`_ channel.
 
