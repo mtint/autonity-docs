@@ -7,7 +7,7 @@ add and remove nodes. To identify nodes, the `account address <https://github.co
 
 Prerequisites
 ---------------
-* An active `Autonity <https://docs.autonity.io/hello-autonity/compose.html>` network
+* An active `Autonity <https://docs.autonity.io/hello-autonity/compose.html>`_ network
 * `Git <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
 * `MetaMask (Chrome) <https://metamask.io/>`_
 * `Docker <https://docs.docker.com/get-started/>`_ (Option 1)
@@ -36,8 +36,8 @@ please change the first port number to avoid collisions, e.g. if you would like 
 same command as above but *-p 3001:3000*. 
 
 
-Option 2: Packet manager
-^^^^^^^^^^^^^^^^^^^^^^^^
+Option 2: From source
+^^^^^^^^^^^^^^^^^^^^^
 First, clone the Validator DApp `repository <https://github.com/clearmatics/validator-dapp>`_ with your terminal
 
 .. code-block:: none
