@@ -1,10 +1,18 @@
-How to run network
-------------------
+How to run network with docker-compose
+--------------------------------------
 
 tl;dr;
 ~~~~~~
 
-Run ``docker-compose up -d`` and off you go!
+Run
+
+.. code:: bash
+
+    git clone https://github.com/clearmatics/autonity.git
+    cd autonity/helloworld/
+    docker-compose up -d
+
+and off you go!
 
 What is this?
 ~~~~~~~~~~~~~
