@@ -3,7 +3,7 @@ GKE
 
 (Skip this step if you have chose another kind of kubernetes cluster)
 
-Using this manual `How to install Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/docs/quickstart>`_  you can deploy:
+Using this manual `How to install Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/docs/quickstart>`_  you can deploy: 
 
 - GKE
 - workers

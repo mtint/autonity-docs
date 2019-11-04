@@ -1,9 +1,12 @@
 Deployments
 ====================
 
-You can deploy Autonity network using docker-compose or deploy it to kubernetes cluster
+You can deploy an Autonity network using docker-compose or a kubernetes cluster 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
+   hello-autonity/index.rst
    kubernetes/index.rst
+
+  

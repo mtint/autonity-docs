@@ -1,0 +1,304 @@
+Install Minikube
+=================
+
+3 steps:
+- Install kubectl
+- Install a Hypervisor ie VMWare
+- Install Minikube
+
+Install kubectl
+--------------------
+Run the install command:
+brew install kubectl 
+alt brew install kubernetes-cli
+
+Check the version is current
+kubectl version
+
+Install a Hypervisor ie VM Ware
+--------------------
+We're doing this so that we can run the Autonity network on a virtual machine. This is a good thing because...
+
+3 steps:
+1. git clone https://github.com/moby/hyperkit
+2. cd hyperkit
+3. make
+
+
+Install Minikube
+--------------------
+Minikube will run a virtual machine with a Kubernetes cluster running in that VM.
+
+brew cask install minikube
+
+.. code-block:: bash
+
+// $ brew cask install minikube
+	==> Tapping homebrew/cask
+	Cloning into '/usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask'...
+	remote: Enumerating objects: 3597, done.
+	remote: Counting objects: 100% (3597/3597), done.
+	remote: Compressing objects: 100% (3589/3589), done.
+	remote: Total 3597 (delta 25), reused 573 (delta 6), pack-reused 0
+	Receiving objects: 100% (3597/3597), 1.20 MiB | 3.08 MiB/s, done.
+	Resolving deltas: 100% (25/25), done.
+	Tapped 1 command and 3485 casks (3,602 files, 3.9MB).
+	==> Satisfying dependencies
+	All Formula dependencies satisfied.
+	==> Downloading https://storage.googleapis.com/minikube/releases/v1.4.0/minikube
+	######################################################################## 100.0%
+	==> Verifying SHA-256 checksum for Cask 'minikube'.
+	==> Installing Cask minikube
+	==> Linking Binary 'minikube-darwin-amd64' to '/usr/local/bin/minikube'.
+	🍺  minikube was successfully installed!
+
+minikube start
+
+.. code:: bash
+
+	$ minikube start
+	😄  minikube v1.4.0 on Darwin 10.13.6
+	💿  Downloading VM boot image ...
+   	 	> minikube-v1.4.0.iso.sha256: 65 B / 65 B [--------------] 100.00% ? p/s 0s
+    	> minikube-v1.4.0.iso: 135.73 MiB / 135.73 MiB [] 100.00% 10.63 MiB p/s 13s
+	🔥  Creating virtualbox VM (CPUs=2, Memory=2000MB, Disk=20000MB) ...
+	🐳  Preparing Kubernetes v1.16.0 on Docker 18.09.9 ...
+	💾  Downloading kubelet v1.16.0
+	💾  Downloading kubeadm v1.16.0
+	🚜  Pulling images ...
+	🚀  Launching Kubernetes ...
+	⌛  Waiting for: apiserver proxy etcd scheduler controller dns
+	🏄  Done! kubectl is now configured to use "minikube"
+
+Install hyperkit
+-----------------
+
+.. code:: bash
+
+	$ git clone https://github.com/moby/hyperkit
+	Cloning into 'hyperkit'...
+	remote: Enumerating objects: 17, done.
+	remote: Counting objects: 100% (17/17), done.
+	remote: Compressing objects: 100% (14/14), done.
+	remote: Total 3540 (delta 7), reused 7 (delta 3), pack-reused 3523
+	Receiving objects: 100% (3540/3540), 12.69 MiB | 7.80 MiB/s, done.
+	Resolving deltas: 100% (1802/1802), done.
+
+	$ cd hyperkit
+
+	$ ls
+	CODINGSTYLE.md	README.md	dtrace		hyperkitrun.sh	xhyve_logo.png
+	CONTRIBUTING.md	README.xhyve.md	go		repo
+	MAINTAINERS	TESTING.md	hyperkit.1	src
+	Makefile	config.mk	hyperkit.opam	test
+	$ make
+	gen src/lib/dtrace.d
+	cc src/lib/vmm/intel/vmcs.c
+	cc src/lib/vmm/intel/vmx.c
+	cc src/lib/vmm/intel/vmx_msr.c
+	cc src/lib/vmm/io/vatpic.c
+	cc src/lib/vmm/io/vatpit.c
+	cc src/lib/vmm/io/vhpet.c
+	cc src/lib/vmm/io/vioapic.c
+	cc src/lib/vmm/io/vlapic.c
+	cc src/lib/vmm/io/vpmtmr.c
+	cc src/lib/vmm/io/vrtc.c
+	cc src/lib/vmm/vmm.c
+	cc src/lib/vmm/vmm_api.c
+	cc src/lib/vmm/vmm_callout.c
+	cc src/lib/vmm/vmm_host.c
+	cc src/lib/vmm/vmm_instruction_emul.c
+	cc src/lib/vmm/vmm_ioport.c
+	cc src/lib/vmm/vmm_lapic.c
+	cc src/lib/vmm/vmm_mem.c
+	cc src/lib/vmm/vmm_stat.c
+	cc src/lib/vmm/vmm_util.c
+	cc src/lib/vmm/x86.c
+	cc src/lib/acpitbl.c
+	cc src/lib/atkbdc.c
+	cc src/lib/block_if.c
+	cc src/lib/consport.c
+	cc src/lib/dbgport.c
+	cc src/lib/fwctl.c
+	cc src/lib/inout.c
+	cc src/lib/ioapic.c
+	cc src/lib/log.c
+	cc src/lib/md5c.c
+	cc src/lib/mem.c
+	cc src/lib/mevent.c
+	cc src/lib/mptbl.c
+	cc src/lib/pci_ahci.c
+	cc src/lib/pci_emul.c
+	cc src/lib/pci_hostbridge.c
+	cc src/lib/pci_irq.c
+	cc src/lib/pci_lpc.c
+	cc src/lib/pci_uart.c
+	cc src/lib/pci_virtio_9p.c
+	cc src/lib/pci_virtio_block.c
+	cc src/lib/pci_virtio_net_tap.c
+	cc src/lib/pci_virtio_net_vmnet.c
+	cc src/lib/pci_virtio_net_vpnkit.c
+	cc src/lib/pci_virtio_rnd.c
+	cc src/lib/pci_virtio_sock.c
+	cc src/lib/pm.c
+	cc src/lib/post.c
+	cc src/lib/rtc.c
+	cc src/lib/smbiostbl.c
+	cc src/lib/task_switch.c
+	cc src/lib/uart_emul.c
+	cc src/lib/virtio.c
+	cc src/lib/xmsr.c
+	cc src/lib/firmware/bootrom.c
+	cc src/lib/firmware/kexec.c
+	cc src/lib/firmware/fbsd.c
+	cc src/lib/firmware/multiboot.c
+	cc src/hyperkit.c
+	ld hyperkit.sym
+	ld: warning: text-based stub file /System/Library/Frameworks//Hypervisor.framework/Hypervisor.tbd and library file /System/Library/Frameworks//Hypervisor.framework/Hypervisor are out of sync. Falling back to library file for linking.
+	dsym hyperkit.dSYM
+	strip hyperkit
+
+
+
+Enable qcow support
+===================
+1. brew install opam libev
+2. opam init
+3. eval `opam config env`
+4. opam install uri qcow.0.10.4 conduit.1.0.0 lwt.3.1.0 qcow-tool mirage-block-unix.2.9.0 conf-libev logs fmt mirage-unix prometheus-app
+
+
+Install opam libev
+------------------
+
+.. code:: bash
+
+	$ brew install opam libev
+	==> Downloading https://homebrew.bintray.com/bottles/opam-2.0.5.high_sierra.bott
+	==> Downloading from https://akamai.bintray.com/87/8799c5a87853dba2a74a3cbc58a7e
+	######################################################################## 100.0%
+	==> Pouring opam-2.0.5.high_sierra.bottle.tar.gz
+	==> Caveats
+	OPAM uses ~/.opam by default for its package database, so you need to
+	initialize it first by running:
+
+	$ opam init
+
+	Bash completion has been installed to:
+	  /usr/local/etc/bash_completion.d
+
+	zsh completions have been installed to:
+	  /usr/local/share/zsh/site-functions
+	==> Summary
+	🍺  /usr/local/Cellar/opam/2.0.5: 48 files, 11.3MB
+	==> Downloading https://homebrew.bintray.com/bottles/libev-4.27.high_sierra.bott
+	######################################################################## 100.0%
+	==> Pouring libev-4.27.high_sierra.bottle.tar.gz
+	🍺  /usr/local/Cellar/libev/4.27: 12 files, 438.8KB
+	==> Caveats
+	==> opam
+	OPAM uses ~/.opam by default for its package database, so you need to
+	initialize it first by running:
+
+	$ opam init
+
+	Bash completion has been installed to:
+	  /usr/local/etc/bash_completion.d
+
+	zsh completions have been installed to:
+	  /usr/local/share/zsh/site-functions
+	$ opam init
+	[NOTE] Will configure from built-in defaults.
+	Checking for available remotes: rsync and local, git.
+	  - you won't be able to use mercurial repositories unless you install the hg
+	    command on your system.
+	  - you won't be able to use darcs repositories unless you install the darcs
+	    command on your system.
+
+
+	<><> Fetching repository information ><><><><><><><><><><><><><><><><><><><>  🐫
+	[default] Initialised
+
+	<><> Required setup - please read <><><><><><><><><><><><><><><><><><><><><>  🐫
+
+	  In normal operation, opam only alters files within ~/.opam.
+
+	  However, to best integrate with your system, some environment variables
+	  should be set. If you allow it to, this initialisation step will update
+	  your bash configuration by adding the following line to ~/.bash_profile:
+
+	    test -r /Users/mc/.opam/opam-init/init.sh && . /Users/mc/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+
+	  Otherwise, every time you want to access your opam installation, you will
+	  need to run:
+
+	    eval $(opam env)
+
+	  You can always re-run this setup with 'opam init' later.
+
+	Do you want opam to modify ~/.bash_profile? [N/y/f]
+	(default is 'no', use 'f' to choose a different file) no
+	A hook can be added to opam's init scripts to ensure that the shell remains in
+	sync with the opam environment when they are loaded. Set that up? [y/N] n
+
+	<><> Creating initial switch (ocaml-base-compiler) ><><><><><><><><><><><><>  🐫
+
+	<><> Gathering sources ><><><><><><><><><><><><><><><><><><><><><><><><><><>  🐫
+	[ocaml-base-compiler.4.09.0] downloaded from cache at https://opam.ocaml.org/cache
+
+	<><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><>  🐫
+	∗ installed base-bigarray.base
+	∗ installed base-threads.base
+	∗ installed base-unix.base
+	[ERROR] The compilation of ocaml-base-compiler failed at
+	        "/Users/mc/.opam/opam-init/hooks/sandbox.sh build ./configure
+	        --prefix=/Users/mc/.opam/default -C CC=cc ASPP=cc -c".
+
+	#=== ERROR while compiling ocaml-base-compiler.4.09.0 =========================#
+	# context     2.0.5 | macos/x86_64 |  | https://opam.ocaml.org#c8244ed3
+	# path        ~/.opam/default/.opam-switch/build/ocaml-base-compiler.4.09.0
+	# command     ~/.opam/opam-init/hooks/sandbox.sh build ./configure --prefix=/Users/mc/.opam/default -C CC=cc ASPP=cc -c
+	# exit-code   65
+	# env-file    /var/folders/q0/srsdsrp54p592zxrq_nc0wgh0000gn/T/opam-mc-93322/ocaml-base-compiler-93322-d6d332.env
+	# output-file /var/folders/q0/srsdsrp54p592zxrq_nc0wgh0000gn/T/opam-mc-93322/ocaml-base-compiler-93322-d6d332.out
+	### output ###
+	# /Users/mc/.opam/opam-init/hooks/sandbox.sh: line 9: cd: /Users/mc/.ccache: No such file or directory
+	# sandbox-exec: empty subpath pattern
+
+
+
+	<><> Error report <><><><><><><><><><><><><><><><><><><><><><><><><><><><><>  🐫
+	┌─ The following actions failed
+	│ λ build ocaml-base-compiler 4.09.0
+	└─
+	┌─ The following changes have been performed (the rest was aborted)
+	│ ∗ install base-bigarray base
+	│ ∗ install base-threads  base
+	│ ∗ install base-unix     base
+	└─
+
+	<><> ocaml-base-compiler.4.09.0 troubleshooting <><><><><><><><><><><><><><>  🐫
+	=> A failure in the middle of the build may be caused by build parallelism
+	      (enabled by default).
+	      Please file a bug report at https://github.com/ocaml/ocaml/issues
+	=> You can try installing again including --jobs=1
+	      to force a sequential build instead.
+	# Run eval $(opam env) to update the current shell environment
+	Switch initialisation failed: clean up? ('n' will leave the switch partially
+	installed) [Y/n] y
+	$ eval $(opam env)
+	$ eval `opam config env`
+	$ opam install uri qcow.0.10.4 conduit.1.0.0 lwt.3.1.0 qcow-tool mirage-block-unix.2.9.0 conf-libev logs fmt mirage-unix prometheus-app
+	[ERROR] No switch is currently set. Please use 'opam switch' to set or install
+	        a switch	
+
+
+
+
+Install helm
+------------
+brew install kubernetes-helm 
+
+Configuration
+
+

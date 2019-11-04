@@ -1,8 +1,8 @@
 Autonity API
 ------------
 
-So you have nice and running 5 node cluster. Let's examine it and try
-*Soma* and *Glienicke* features. First of all we need to connect to one
+So you have a functioning and running 5 node cluster. Let's examine it and try
+*Soma* and *Glienicke* features. We need to connect to one
 of the nodes: ``autonity attach http://0.0.0.0:8541``
 
 In the Genesis file ``genesis-ibft.json`` we've defined the while list
@@ -25,7 +25,7 @@ We have 5 validators so we expect to see 4 connected peers of each node:
     net.peerCount
         4
 
-Let's check what are this peers:
+Let's check what are these peers:
 
 .. code:: bash
 
@@ -67,7 +67,7 @@ If you want you can get the same information by hash:
 Adding and removing from validators
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-First of all we need to get *Soma* contract ABI and address:
+We need to get *Soma* contract ABI and address:
 
 .. code:: bash
 
@@ -182,7 +182,7 @@ The current white list can be gotten:
            "enode://3ce6c053cb563bfd94f4e0e248510a07ccee1bc836c9784da1816dba4b10564e7be1ba42e0bd8d73c8f6274f8e9878dc13814adb381c823264265c06048b4b59@172.25.0.15:30303"
         ]
 
-Lets remove one peer from white list and check that the node will be
+Let's remove one peer from white list and check that the node will be
 dropped. At the moment we have 4 connections on each node:
 
 ::

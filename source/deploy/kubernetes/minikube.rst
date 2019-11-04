@@ -1,12 +1,12 @@
 Minikube
 ==========================================
 
-Minikube allows a Kubernetes cluster to be run locally on MacOS, Windows and Linux. Using Minikube an Autonity network can be started on your local machine.
+Minikube enables you to run a Kubernetes cluster locally on MacOS, Windows and Linux. Using Minikube, you can run an Autonity network on your local machine.
 
 Prerequisites
 -------------
 
-To follow this tutorial you will need a basic understanding of using a terminal. In terms of software prerequsites you will need
+You'll need a basic understanding of using a terminal. Install the following software:
 
 - `Installation git <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
 - `Installation minikube  <https://kubernetes.io/docs/tasks/tools/install-minikube/>`_
@@ -22,6 +22,14 @@ From the terminal ensure that everything was correctly installed.
 
 You should see the version numbers for the installs printed back to the terminal.
 
+Install Minikube
+----------------
+
+.. toctree::
+   :maxdepth: 1
+xxxxxx
+   install_minikube.rst
+
 
 Starting Minikube
 -----------------
@@ -34,9 +42,9 @@ Open a new terminal and run
 
     minikube start
 
-Depending on your local environment this may start some downloads to complete the minikube installation. This step can take a while so this may be a good time to fetch coffee. Once minikube has finished booting it will print a line stating the local IP address of the cluster.
+Depending on your local environment this may start some downloads to complete the minikube installation. It may take a few moments. Once minikube has finished booting it will print a line stating the local IP address of the cluster.
 
-If you see the following the cluster has started and is ready to go.
+If you see the following, the cluster has started and is ready to go.
 
 .. code:: bash
 
@@ -46,8 +54,7 @@ If you see the following the cluster has started and is ready to go.
 Deploy Tiller to the cluster and configure helm
 -----------------------------------------------
 
-Run the following command to initialise helm:
-It will deploy tiller into cluster and give your possibilities to deploy packages using helm
+The following command deploys tiller into the cluster and gives you possibilities to deploy packages using helm
 
 .. code:: bash
 

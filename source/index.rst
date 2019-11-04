@@ -6,12 +6,16 @@
 Autonity
 ====================================
 
-Autonity is a generalisation of the `Ethereum Protocol`_ adding several features that make it applicable for permissioned networks. 
+**What it is**
 
-Autonity supports deterministic finality, and the ability to permission validators and network access. 
-Autonity works in harmony with Ion_, a general interoperabillity framework, to support interoperability between Ethereum chains, and even Ethereum and non-Ethereum platforms.
+Autonity is a generalisation of the `Ethereum Protocol`_ and has features that make it applicable for permissioned networks: 
 
-Get started by running the Autonity Hello World that will allow you to run a local Autonity network in about two minutes. 
+- Autonity supports deterministic finality, and has the ability to permission validators and network access 
+- Autonity works in harmony with Ion_, a general interoperabillity framework, to support interoperability between Ethereum chains, and even Ethereum and non-Ethereum platforms
+
+**Get started**
+
+Run Autonity Hello World to get started with your Autonity network.
 
 .. toctree::
    :maxdepth: 2
@@ -24,7 +28,8 @@ Get started by running the Autonity Hello World that will allow you to run a loc
    deploy/index.rst
 
 
-.. note:: Have a question? You can reach the Autonity team on Github_ or in the `Autonity Gitter`_ channel.
+
+.. note:: Have a question? You can reach the Autonity team on Github_ or in the `Autonity Gitter`_ channel
 
 
 .. _Ethereum Protocol: https://www.ethereum.org/

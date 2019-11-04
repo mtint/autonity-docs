@@ -18,12 +18,13 @@ Prerequisites
 
 Start the DApp
 ---------------
-There are two options to get the DApp up and running:
+You have two options to start the the DApp:
 
 
 Option 1: Docker image (fastest)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-To get the DApp up and running quickly, you can directly tap into our Clearmatics image with
+--------------------------------
+
+To start the DApp quickly, you can directly tap into our Clearmatics image with
 
 .. code-block:: none
 
@@ -37,14 +38,15 @@ same command as above but *-p 3001:3000*.
 
 
 Option 2: From source
-^^^^^^^^^^^^^^^^^^^^^
-First, clone the Validator DApp `repository <https://github.com/clearmatics/validator-dapp>`_ with your terminal
+---------------------
+
+Clone the Validator DApp `repository <https://github.com/clearmatics/validator-dapp>`_ with your terminal
 
 .. code-block:: none
 
     git clone git@github.com:clearmatics/validator-dapp.git
 
-Please write the following in your terminal before you proceed
+Change directory
 
 .. code-block:: none
 
@@ -63,13 +65,12 @@ As long as the terminal doesn't display any error messages, you can now proceed 
     npm start
 
 This should automatically open a tab in your Chrome browser which shows the user interface. If this is not the case,
-you can see it at http://localhost:3000/. 
+go to: http://localhost:3000/. 
 
 
 Does it work?
 -------------
-When the page has finished loading, you should see the user interface. In the user interface, you can see a list of current
-validators.
+The user interface lists current validators.
 
 .. image:: validator.png
 
@@ -85,33 +86,30 @@ Access is allowed if you can demonstrate that your account has a private key whi
 
 Import a private key
 --------------------
-To be a validator, you need to prove it to the network and this is where your private key comes into play. It is assumed that you
-know the private key to at least one of the validators. To import it please follow these three steps:
+To be a validator, you need to prove it to the network by importing your private key. It is assumed that you know the private key to at least one of the validators. 
 
-Firstly, you need to open MetaMask and press the account icon, in the upper right corner of the dropdown menu:
+#. Open MetaMask and click the account icon (in the upper right corner of the dropdown menu):
 
-.. image:: import-privkey-step1.png
+	.. image:: import-privkey-step1.png
 
-Now you need to press *Import Account*.
+#. Click *Import Account*.
 
-.. image:: import-privkey-step2.png
+	.. image:: import-privkey-step2.png
 
-Finally, you need to paste your private key in the field and press *Import*.
+#. Paste your private key in the field and click *Import*.
 
-.. image:: import-privkey-step3.png
+	.. image:: import-privkey-step3.png
 
-If the account loads correctly you should be good to go. You can try that your account is authenticated by attempting to remove a validator. By pressing *Remove*,
-you should see a popup window from MetaMask asking you to confirm your transaction. If you see this window, that means that the connection was successfully authenticated.
+You should see the account. Check the authentication by attempting to remove a validator: click *Remove* and a popup from Metatask will ask you to confirm your action. 
 
-.. image:: metamask-tx.png
+	.. image:: metamask-tx.png
 
-When you do want to perform an actual change in the permissioning, you need to press *Confirm* to propagate your submission to the network.
+.. NOTE:: When you do want to perform an actual change in the permissioning, you need to press *Confirm* to propagate your submission to the network
 
 
 Node management verification
 ----------------------------
-Apart from the ability to display the current set of validators (or observers) through the user interface, we can verify it by network logs. In this example, we have filtered for any changes in the validator set. Before we make any changes to the permissioning,
-we have 7 validators and the full set can seen in the logs as follows:
+We can use the UI to display the curent set of validators or the network logs. In this example below, we have filtered for any changes in the validator set. Before we make any changes to the permissioning we have 7 validators and the full set can seen in the logs as follows:
 
 .. literalinclude:: all-validators-logs.txt
     :emphasize-lines: 2
@@ -128,7 +126,7 @@ Finally, we add the same validator back to return to our initial state:
 
 
 Next steps
-------------------
+----------
 That's it. Since the contracts are pre-deployed as part of the Autonity client, you should now be able to adjust the network permissioning. If your MetaMask is properly set up and your
 account has sufficient funds, you should be able to fully interact with the validation mechanism.
 

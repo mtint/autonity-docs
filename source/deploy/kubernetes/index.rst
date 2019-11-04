@@ -1,7 +1,7 @@
 Kubernetes
 ====================
 
-Prepare one of next kubernetes clusters:
+Prepare a kubernetes cluster:
 
 .. toctree::
    :maxdepth: 1

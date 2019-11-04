@@ -2,18 +2,15 @@ Glienicke - P2P Permissioning
 ====================================
 
 Autonity supports network permissioning in private blockchains by leveraging a smart contract which manages which nodes can access the network.
-Keeping a consistent state of the list of members of nodes is technically feasible due to the finality property (i.e. no forks) of BFT-like consensus protocols
-used by the Autonity client.
+Keeping a consistent state of the list of members of nodes is technically feasible due to the finality property (i.e. no forks) of BFT-like consensus protocols used by the Autonity client.
 
 The restriction of access to the ledger can be tackled at different layers of the network stack and providing various levels of access to the nodes in the network.
-The main network and protocol layers at which the permissioning can be implemented are TCP/IP level and below (e.g. physical level), DevP2P, Ethereum Service protocol level or at the sub-protocol
-level (e.g. Ethereum v.63). In terms of the level of access granted, the members of the network may be able to read the contents of the ledger (i.e. blockchain observers), append blocks into
-the chain (i.e. miners or validators) and send transactions to be inserted in blocks by the validators.
+The main network and protocol layers at which the permissioning can be implemented are TCP/IP level and below (e.g. physical level), DevP2P, Ethereum Service protocol level or at the sub-protocol level (e.g. Ethereum v.63). For the level of access granted, the members of the network may be able to read the contents of the ledger (i.e. blockchain observers), append blocks into the chain (i.e. miners or validators) and send transactions to be inserted in blocks by the validators.
 
 In our first release, our solution targets the restriction of read-access to the blockchain implementing minimal light modifications at the Ethereum protocol level.
 
 
-.. note:: More fine-grained permissioning solutions at different layers of the stack are present in the Autonity roadmap.
+.. note:: More fine-grained permissioning solutions at different layers of the stack are present in the Autonity roadmap
 
 
 Design Goals
@@ -21,9 +18,9 @@ Design Goals
 
 The design goals of our solution are:
 
-- An on-chain oracle (in the form of a smart contract) maintaining a white list which determines who has read access in the network.
-- A governance process for adding and removing nodes from the white list.
-- Changes at the client and at the Ethereum protocol level to enforce the on-chain whitelist at the P2P level.
+- An on-chain oracle (in the form of a smart contract) maintaining a white list which determines who has read access in the network
+- A governance process for adding and removing nodes from the white list
+- Changes at the client and at the Ethereum protocol level to enforce the on-chain whitelist at the P2P level
 
 **Whitelist of Network Members.**
 The list of nodes which are allowed to read the chain and listen to blocks is stored in a smart contract.
@@ -38,15 +35,15 @@ The logic in the smart contract sets the rules to add and remove peers from the 
 the governance of the member set writing the contract functions which satisfy a defined interface. Examples of variables
 that can be defined at the contract level are:
 
-- The minimum quorum and threshold required to add/remove nodes.
-- The minimum and maximum size of the whitelist.
-- The voting mechanics to add/remove nodes.
+- The minimum quorum and threshold required to add/remove nodes
+- The minimum and maximum size of the whitelist
+- The voting mechanics to add/remove nodes
 - Etc.
 
 **Absence of Bootnodes**
 It is common practice in public blockchains to use bootnodes or static nodes as bridges to P2P networks. A bootnode is
 a node which is always running and available to relay peers' information to new nodes.
-However, in a private blockchain relying in the use of bootnodes would mean that some nodes have privileges over the others,
+However, in a private blockchain, relying on the use of bootnodes would mean that some nodes have privileges over the others,
 as static nodes could not be removed from the whitelist. Our solution leverages light modifications at the Ethereum protocol
 and DevP2P level to avoid the need of using bootnodes or static nodes. Autonity lets the members of the whitelist dial and
 setup connections with the new additions of the list. At the same time, when a node is removed from the list, the remaining
@@ -60,7 +57,7 @@ Implementation Details
 
 The Glienicke governance contract **must** define a number of properties and interfaces to allow communication with the consensus layer.
 
-.. note:: The following interface is Solidity specific however other Smart contract languages can be used.
+.. note:: The following interface is Solidity specific, however you can use other Smart contract languages
 
 .. code-block:: javascript
 
@@ -101,7 +98,7 @@ To use Glienicke, various additional fields must be added the config of the ``ge
         "glienickeABI": ""
     }
 
-.. note:: The enodes whitelist above are just an example of a possible initial network member set.
+.. note:: The enodes whitelist above are just an example of a possible initial network member set
 
 **Limitations**
 

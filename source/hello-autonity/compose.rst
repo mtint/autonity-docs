@@ -1,48 +1,69 @@
-How to run network with docker-compose
---------------------------------------
+How to run the network with docker-compose
+==========================================
 
-tl;dr;
-~~~~~~
+.. NOTE:: tl;dr; 
+  
+  Run
+
+    .. code:: bash
+
+        git clone https://github.com/clearmatics/autonity.git
+        cd autonity/helloworld/
+        docker-compose up -d
+
+    and off you go!
+
+
+Install Docker
+--------------
+
+Install Docker and Docker-Compose. 
+The versions we used in development were:
+ 
+.. code:: bash
+    $ docker --version
+    Docker version 19.03.4, build 9013bf5
+    $ docker-compose --version
+    docker-compose version 1.24.1, build 4667896b
+    $ docker-machine --version
+    docker-machine version 0.16.2, build bd45ab13
+
+xxxxxxx
+
+Clone the repository
+--------------------
 
 Run
 
 .. code:: bash
 
     git clone https://github.com/clearmatics/autonity.git
-    cd autonity/helloworld/
-    docker-compose up -d
-
-and off you go!
-
-What is this?
-~~~~~~~~~~~~~
-
-A simple script to start an Autonity network with IBFT.
-
-How do I run it?
-~~~~~~~~~~~~~~~~
-
-You will need Docker and Docker-Compose. The versions we used while in
-development were:
 
 .. code:: bash
 
-    $ docker -v
-    Docker version 18.09.2-ce, build 62479626f2
+    cd autonity/helloworld/
 
-    $ docker-compose -v
-    docker-compose version 1.23.1, build b02f1306
 
-To deploy the network just run:
+Deploy the network
+------------------
+
+To deploy the network run:
 
 .. code:: bash
 
     $ docker-compose up -d
 
-What should it look like when it is running?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+and off you go!
 
-When you first start the ``docker-compose up -d`` it should print out
+.. NOTE:: What is docker-compose?
+  A simple script to start an Autonity network with IBFT
+
+
+
+What should it look like when it is running?
+--------------------------------------------
+
+When you start the ``docker-compose up -d`` it should print out
 this information:
 
 .. code:: bash
@@ -64,7 +85,7 @@ this information:
 
 When the nodes have all been deployed and connected to each other, the
 ``nodes-connector`` should have exited. You can check this by doing the
-``ps`` command:
+``docker-compose ps`` command:
 
 .. code:: bash
 
@@ -79,9 +100,9 @@ When the nodes have all been deployed and connected to each other, the
          nodes-connector   ./autonity-connect.sh   Exit 0
 
 How can I use the nodes?
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
-You can connect to the nodes, through the autonity console all the RPC
+You can connect to the nodes through the autonity console. All the RPC
 ports are open. Here is an example of attaching a console to
 ``autonity-node-1``:
 
@@ -107,10 +128,10 @@ interactive console:
     ["0x850c1eb8d190e05845ad7f84ac95a318c8aab07f", 298, "0xba609a7786a70a0c1be27c3f3325279512c004ba48c3a82e945cc3f45f1d045d", true]
 
 What are all these files in the ``helloword`` directory?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------------
 
 The files in the ``helloworld`` directory are used to deploy and run the
-network, you can alter them and reploy to see how the changes affected
+network. You can alter them and redeploy to see how the changes affected
 the network. Here is the file list:
 
 .. code:: bash
@@ -131,16 +152,16 @@ the network. Here is the file list:
     -rw-r--r-- 1 clearmatics clearmatics   65 Feb 12 23:41 nodekey5
     -rw-r--r-- 1 clearmatics clearmatics 3.3K Feb 13 15:35 README.md
 
--  ``Dockerfile`` is used by Docker to build the image, that will be
+-  ``Dockerfile`` is used by Docker to build the image that will be
    reused everytime you deploy a container
 -  ``docker-compose.yml`` is used by Docker-Compose and it describes how
-   the nodes should be deployed (what are the cointaner names, what
+   the nodes should be deployed (what are the container names, what
    images should be used, what is the order of deployment)
 -  ``autonity-start.sh`` script to start an autonity node, used evertime
    a container is deployed
 -  ``autonity-connect.sh`` script run everytime the
    ``autonity-connector`` container is started (it connects 5 nodes to
-   ech other, sets the coinbase value, and starts the miner)
+   each other, sets the coinbase value, and starts the miner)
 -  ``keystore`` directory with all the keystores (keystores are used to
    keep the private keys of the accounts, our keystores all use the
    password ``test``)
@@ -150,21 +171,21 @@ the network. Here is the file list:
    World)
 
 How can the validator set be changed?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------
 
-There are two ways to update the validator set:
+There are three steps to update the validator set:
 
 1. Update the Soma and Glienicke smart contracts
 2. Update the ``nodekey`` files
 3. Change the ``genesis-ibft.json``
 
-Update Glienicke and Soma contract
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Update Glienicke and Soma contracts
+-----------------------------------
 
-The *Glienick* contract is responsible for making sure that only nodes
+The *Glienicke* contract is responsible for making sure that only nodes
 in its list are able to connect to the Autonity client.
 
-In the default Docker Compose deployment the contract can be found at
+In the default Docker Compose deployment, the contract can be found at
 the ``0x522B3294E6d06aA25Ad0f1B8891242E335D3B459`` address. You can find
 the contract deployed in the Autonity code in the
 ```contracts`` <https://github.com/clearmatics/autonity/tree/master/contracts/Glienicke>`__
@@ -172,20 +193,20 @@ directory.
 
 The *Soma* contract allows anyone to vote on the IBFT set of validators.
 
-In the default Docker Compose deployment the contract can be found at
+In the default Docker Compose deployment, the contract can be found at
 the ``0xc3d854209eF19803954916F2fe4712448094363e`` address. You can find
 the contract deployed in the Autonity code in the
 ```contracts`` <https://github.com/clearmatics/autonity/tree/master/contracts/Soma>`__
 directory.
 
 Change the ``genesis-ibft.json`` and update the ``nodekey`` files
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------------------------------
 
-*The Autonity Hello World limits the amount of validators to 4, but in a
-real world application you can have more validators*
+*The Autonity Hello World instance limits the number of validators to 4, but in a
+real world application you can have more validators.*
 
 It is possible update the set of validators by updating the genesis file
-and the nodekey files, the steps needed are:
+and the nodekey files. The steps are:
 
 -  Update the ``nodekey1`` file (or 2,3,4) with the private key of the
    validator
@@ -229,7 +250,7 @@ The ``validators`` has higher priority compare to ``extraData`` and if
 both are specified, than ``extraData`` will be rewritten.
 
 What are the keystore passwords?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 All the keystores use the same password: ``test`` (*please do not use in
 any production enviroment*)

@@ -3,7 +3,7 @@ Ion
 
 Ion_ is a platform agnostic interoperability framework. It allows state and value to be transferred between disparate blockchains without the need for an intermediary token or a trusted intermediary.
 
-The Ion project currently has validation contracts for 
+The Ion project currently has validation contracts for: 
 
 - Clique (Ethereum)
 - IBFT (Ethereum)

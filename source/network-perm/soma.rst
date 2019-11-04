@@ -11,8 +11,8 @@ Design Goals
 ----------------
 
 Soma design goals are:
-    - Govern the network validator set.
-    - Create an open interface whereby many governance mechanisms can be implemented to suit all requirements.
+    - Govern the network validator set
+    - Create an open interface whereby many governance mechanisms can be implemented to suit all requirements
 
 **Set of Network Validators.**
 The set of validators who create and validate blocks are stored in a smart contract. Validators are identified via their public address.
@@ -27,9 +27,9 @@ The logic in the smart contract sets the rules to add and remove validators from
 the governance of the member set writing the contract functions which satisfy a defined interface. Examples of variables
 that can be defined at the contract level are:
 
-- The minimum quorum and threshold required to add/remove nodes.
-- The minimum and maximum size of the whitelist.
-- The voting mechanics to add/remove nodes.
+- The minimum quorum and threshold required to add/remove nodes
+- The minimum and maximum size of the whitelist
+- The voting mechanics to add/remove nodes
 
 Implementation Details
 ------------------------
@@ -38,7 +38,7 @@ Implementation Details
 
 The Soma governance contract **must** define a number of properties and interfaces to allow communication with the consensus layer.
 
-.. note:: The following interface is Solidity specific however other Smart contract languages can be used.
+.. note:: The following interface is Solidity specific however other Smart contract languages can be used
 
 .. code-block:: javascript
 
@@ -58,7 +58,7 @@ The Soma governance contract **must** define a number of properties and interfac
         return validators;
     }
 
-For the consensus layer to be able to access the validator whitelist a function ``getValidators()`` must be implemented that returns the property ``validators`` containing the whitelist of validators. It is up to users to decide how to implement functions governing this whitelist.
+For the consensus layer to be able to access the validator whitelist, a function ``getValidators()`` must be implemented that returns the property ``validators`` containing the whitelist of validators. It is up to users to decide how to implement functions governing this whitelist.
 
 **Deploying Soma**
 
@@ -66,7 +66,7 @@ For the consensus layer to be able to access the validator whitelist a function 
 2. The Autonity protocol deploys automatically the smart contract at block #1.
 3. Each member retrieve the current state of the whitelist after each mined block (i.e. once per block height) and enforces the addition/removal of peers.
 
-To use Soma three additional fields must be added the config of the `genesis.json` which define the Soma contracts binary, ABI and the contract deployer:
+To use Soma, three additional fields must be added the config of the `genesis.json` which define the Soma contracts binary, ABI and the contract deployer:
 
 .. code-block:: json
 
@@ -80,16 +80,16 @@ To use Soma three additional fields must be added the config of the `genesis.jso
         }
     }
 
-The bytecode and ABI must be generated from the same compiled smart contract. The deployer *may* be important to the smart contract logic however by design Soma is unopionated, natively it only has the effect of determining the address at which the contract is deployed at.
+The bytecode and ABI must be generated from the same compiled smart contract. The deployer *may* be important to the smart contract logic, however by design Soma is unopionated, natively it only has the effect of determining the address at which the contract is deployed at.
 
 **Soma Contract API**
 
 In addition to the standard JSON RPC API of Geth_, Autonity console implements the following of IPC methods for nodes
 to retrieve information from the Soma contract via ``web3``:
 
-``istanbul.getValidators(<0x + blockNumber>)`` retrieves the validator set at a given block height.
-``ìstanbul.getValidatorsAtHash(<blockHash>)`` retrieves the validator set given the hash of a block.
-``istanbul.getSomaContractAddress()`` returns the address of the Soma contract.
+``istanbul.getValidators(<0x + blockNumber>)`` retrieves the validator set at a given block height
+``ìstanbul.getValidatorsAtHash(<blockHash>)`` retrieves the validator set given the hash of a block
+``istanbul.getSomaContractAddress()`` returns the address of the Soma contract
 
 .. _Glienicke: http://docs.autonity.io/network-perm/glienicke.html
 .. _Geth: https://github.com/ethereum/wiki/wiki/JSON-RPC
