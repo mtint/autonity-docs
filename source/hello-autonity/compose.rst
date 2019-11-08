@@ -28,9 +28,9 @@ The versions we used in development were:
     $ docker-machine --version
     docker-machine version 0.16.2, build bd45ab13
 
-xxxxxxx
 
-Clone the repository
+
+Clone the GitHUb repository
 --------------------
 
 Run
