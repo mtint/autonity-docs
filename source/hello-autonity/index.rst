@@ -15,4 +15,5 @@ A quick tutorial:
 
    compose.rst
    api.rst
+   api_2.rst
 

@@ -2,8 +2,7 @@
 Decentralised Applications (DApps)
 ===========================================
 
-Our DApps provide an interface to manage an Autonity network, consisting of at least four validators. The permissioning of a network is based on both validator governance
-and P2P permissioning. The smart contracts in charge of this are `Soma <https://docs.autonity.io/network-perm/soma.html>`_ and `Glienicke <https://docs.autonity.io/network-perm/glienicke.html>`_, respectively.
+Our DApps provide an interface to manage an Autonity network, consisting of at least four validators. The permissioning of a network is based on both validator governance and P2P permissioning. The smart contracts that control this are `Soma <https://docs.autonity.io/network-perm/soma.html>`_ and `Glienicke <https://docs.autonity.io/network-perm/glienicke.html>`_, respectively.
 
 Both DApps have similar characteristics but there are important differences between them. These can be summarised as follows:
 
