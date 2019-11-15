@@ -1,7 +1,7 @@
 Autonity Hello World
 ====================
 
-A quick tutorial:
+Tutorial:
  - how to run your own Autonity permissioned cluster
 
  - use it to  manage:
@@ -15,5 +15,4 @@ A quick tutorial:
 
    compose.rst
    api.rst
-   api_2.rst
 

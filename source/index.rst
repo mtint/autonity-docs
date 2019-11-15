@@ -26,13 +26,14 @@ Run Autonity Hello World to get started with your Autonity network.
    IBFT/index.rst
    ion/index.rst
    deploy/index.rst
+   test/test.md
 
 
 
 .. note:: Have a question? You can reach the Autonity team on Github_ or in the `Autonity Gitter`_ channel
 
 
-.. _Ethereum Protocol: https://www.ethereum.org/
+.. 2Ethereum Protocol: https://www.ethereum.org/
 .. _Ion: https://www.github.com/clearmatics/ion/
 .. _Github: https://www.github.com/clearmatics/autonity/
 .. _Autonity Gitter: https://gitter.im/clearmatics/autonity
