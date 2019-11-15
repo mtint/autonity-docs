@@ -23,10 +23,10 @@ Run Autonity Hello World to get started with your Autonity network.
    hello-autonity/index.rst
    network-perm/index-nw.rst
    dapps/index-dapps.rst
-   IBFT/index.rst
+   TBFT/index.rst
    ion/index.rst
    deploy/index.rst
-   test/test.md
+   test/test.rst
 
 
 
@@ -73,7 +73,7 @@ over HTTP or via WebSockets, and Pub/Sub is supported. The API supports typical 
 
 The Autonity client supports smart contract and Dapp development, deployment, and operational use cases and API Autonity related RPC-APIs. And all standard Key management and standard Ethereum tooling. The aim of Autonity is to stay close to Go Ethereum and all features compatible with the Open Source.
 
-** Develop Crypto Edconomic Systems
+** Develop Crypto Economic Systems
 
 ** System Requirements
 same. - archive or client
