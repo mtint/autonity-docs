@@ -11,9 +11,7 @@ Tutorial:
  	- observers (users with read rights)
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    compose.rst
    api.rst
-   api2.rst
-

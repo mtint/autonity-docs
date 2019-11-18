@@ -1,5 +1,5 @@
 Autonity API
-------------
+============
 
 So you have a functioning and running 5 node cluster. Let's examine it and try
 *Soma* and *Glienicke* features. We need to connect to one
@@ -38,7 +38,7 @@ Let's check what are these peers:
         ]
 
 Validators
-~~~~~~~~~~
+----------
 
 We can get the list of actual validator for any block:
 
@@ -65,7 +65,7 @@ If you want you can get the same information by hash:
     istanbul.getValidatorsAtHash(eth.getBlock(eth.blockNumber).hash)
 
 Adding and removing from validators
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 
 We need to get *Soma* contract ABI and address:
 
@@ -144,7 +144,7 @@ Remove a validator
         ]
 
 Permissioned network
-~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 As it was done for *Soma* we need to get *Glienicke* contract:
 
@@ -166,7 +166,7 @@ As it was done for *Soma* we need to get *Glienicke* contract:
         ...
 
 Remove and add a user to the white list
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------
 
 The current white list can be gotten:
 
@@ -274,7 +274,7 @@ be established in few seconds:
         ]
 
 Error handling
-^^^^^^^^^^^^^^
+--------------
 
 If we try to add an incorrect enode:
 
