@@ -13,5 +13,7 @@ Tutorial:
 .. toctree::
    :maxdepth: 1
 
+   how to deploy an autonity node.rst
+   Get Started with Autonity.rst
    compose.rst
    api.rst

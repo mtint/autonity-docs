@@ -1,7 +1,7 @@
 How to run the network with docker-compose
 ==========================================
 
-.. NOTE:: tl;dr; 
+.. NOTE::  
   
   Run
 

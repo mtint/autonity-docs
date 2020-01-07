@@ -1,24 +1,24 @@
 Prometheus (optional)
-=========================================
+=====================
 
 `Prometheus helm chart`_   deploy Prometheus_ monitoring system.
 
 Configuration
-~~~~~~~~~~~~~
+-------------
 
 * Configmap with server settings prometheus_configmap.yaml_
 * Maps ``prometheus:`` in main chart values.yaml_
 
 
 Deploy
-~~~~~~
+-------
 
 .. code:: bash
 
     helm install -n autonity-platform ./ --set global.prometheus.enabled=true
 
-How is it works?
-~~~~~~~~~~~~~~~~
+How it works?
+-------------
 * ``Autonity`` has internal metrics that described in `wiki article Metrics-and-Monitoring`_. It can be available through the `ipc` inside the pod
 * Pod ``validator`` or ``observer`` has sidecar container `prometheus-exporter` that can connect to the `ipc` and expose prometheus metrics
 * Prometheus-server can autodiscover it using `kubernetes service discovery based on annotation`_

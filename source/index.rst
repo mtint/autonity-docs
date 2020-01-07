@@ -3,15 +3,59 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Autonity
-====================================
 
-**What it is**
+Autonity Enterprise Ethereum Client
+===================================
 
-Autonity is a generalisation of the `Ethereum Protocol`_ and has features that make it applicable for permissioned networks: 
+*Ethereum based, protocol enabling, permissioned, decentralized, and interoperable transacting member-mutual networks*
 
-- Autonity supports deterministic finality, and has the ability to permission validators and network access 
-- Autonity works in harmony with Ion_, a general interoperabillity framework, to support interoperability between Ethereum chains, and even Ethereum and non-Ethereum platforms
+
+**What is Autonity?**
+
+* blockchain-based distributed computing platform and operating system
+* a fork of the Go Ethereum protocol
+* open source and public
+
+**it:**
+
+* features smart contract functionality
+* supports deterministic finality
+* implements the Tendermint consensus algorithmn (BFT type)
+* implements Proof of Work (Ethash) and Proof of Authority (IBFT 2.0 and Clique) consensus mechanisms
+* functions with Ion_, a general interoperabillity framework, to support interoperability between Ethereum chains, and non-Ethereum platforms
+
+
+**What can you do with Autonity?**
+
+Develop:
+
+* crypto economic systems
+* smart contracts
+* decentralised apps
+* private (permissioned) network enterprise applications that need secure, high-performance processing
+* an economic layer for new business models - fee redistribution/decentralised applications
+
+
+**How can you interact with Autonity?**
+
+Run, maintain, debug and monitor nodes in an Ethereum network through:
+
+* CLI (link to reference) 
+* JSON-RPC API (link to reference)
+
+
+
+Alternative introduction
+========================
+
+**What is Autonity?**
+
+Autonity is a blockchain-based, distributed computing platform and operating system. It is open source and public, and features smart contract functionality. It is a fork of the Go Ethereum protocol, has features that make it suitable for permissioned (private) networks, supports deterministic finality, and implements the Tendermint consensus algorithmn (BFT type).
+
+Autonity implements Proof of Work (Ethash) and Proof of Authority (IBFT 2.0 and Clique) consensus mechanisms. 
+It works in harmony with Ion_, a general interoperabillity framework, to support interoperability between Ethereum chains, and even Ethereum and non-Ethereum platforms.
+
+
 
 **Get started**
 
@@ -26,8 +70,6 @@ Run Autonity Hello World to get started with your Autonity network.
    TBFT/index.rst
    ion/index.rst
    deploy/index.rst
-   test/test.rst
-
 
 
 .. note:: Have a question? You can reach the Autonity team on Github_ or in the `Autonity Gitter`_ channel
@@ -38,45 +80,8 @@ Run Autonity Hello World to get started with your Autonity network.
 .. _Github: https://www.github.com/clearmatics/autonity/
 .. _Autonity Gitter: https://gitter.im/clearmatics/autonity
 
-
-
-* Autonity Enterprise Ethereum Client
-
-** What is Autonity?
-Autonity - Fork of Go Ethereum
-targeted for private networks
-implements the Tendermint consensus algorithmn (BFT type)
-Autonity client protocol use case - financial apps/enterprise applications/high performance and secure
-Economic layer for new business models - fee redistribution/decentralised applications
-
-Hyperledger Autonity is an open-source Ethereum client developed under the Apache 2.0 license and written in Java. 
-It runs on a fork of the Go Ethereum public network and is targeted for private networks. Autonity implements Proof of Work (Ethash) and Proof of Authority (IBFT 2.0 and Clique) consensus mechanisms. 
-
-You can use Autonity to develop private network enterprise applications that need secure, high-performance 
-processing. 
-
-Autonity supports enterprise features including privacy and permissioning. 
-
-** What can you do with Autonity?
-crypto economic system development
-smart contracts
-decentralised apps
-
-Autonity includes a [command line interface](Reference/CLI/CLI-Syntax.md) and [JSON-RPC API](HowTo/Interact/APIs/API.md)
-for running, maintaining, debugging, and monitoring nodes in an Ethereum network. You can use the API via RPC
-over HTTP or via WebSockets, and Pub/Sub is supported. The API supports typical Ethereum functionalities such as:
-
-* Smart contract development
-* Decentralized application (Dapp) development
-
-** What does Autonity support?
-
-The Autonity client supports smart contract and Dapp development, deployment, and operational use cases and API Autonity related RPC-APIs. And all standard Key management and standard Ethereum tooling. The aim of Autonity is to stay close to Go Ethereum and all features compatible with the Open Source.
-
-** Develop Crypto Economic Systems
-
-** System Requirements
-same. - archive or client
+**System Requirements**
+same - archive or client
 RAM - remove Eth Mainnet sentence
 
 ** Build with Binary or Docker - same address as System X
@@ -112,9 +117,63 @@ New section Autonity Contract Customisation - see the section on Github (Andres 
 
 stake - customisable
 
-DOnt need Free Gas Network
+Don't need Free Gas Network
 
+Get started with Autonity
 
+   * System requirements
+   * Install binary distribution
+   * Build from source
+   * Start Autonity
+   * Run Autonity from a Docker image
+
+Configure Autonity
+
+   * Consensus protocols
+   * Create Autonity genesis file
+   * Configure a GAS network
+   * High availability
+   * APIs?
+   * Load balancing
+   * Mining
+   * Passing LVM options?
+
+Interact with node
+
+   * Autonity APIs
+   * Use JSON-RPC API over HTTP or Websockets
+   * Use GraphQL over HTTP
+   * Authenticate JSON-RPC requests
+
+Client libraries?
+
+   * Use the web3.js-eea Client Library
+
+Filters
+
+   * Accessing logs using the Autonity API
+
+Find and connect to peers
+
+   * Start a bootnode
+   * Configure ports for access
+   * Manage peers
+   * Use UPnp
+
+Send transactions
+
+   * Use wallets for key management
+   * Create and send transactions
+   * Create and send private transactions
+   * Include reason in transaction receipts
+
+* Limit access to node
+* Use local permissioning
+* Update onchain permissioing whitelists
+
+* Use privacy features
+* Use EEA-compliant privacy
+* Use Autonity-extended privacy
 
 
 

@@ -25,7 +25,7 @@ We have 5 validators so we expect to see 4 connected peers of each node:
     net.peerCount
         4
 
-Let's check what are these peers:
+Check the peers:
 
 .. code:: bash
 
@@ -91,7 +91,7 @@ Now it's possible to use ``somaContract`` object to call *Soma*.
 Add a validator
 '''''''''''''''
 
-::
+.. code:: bash
 
     // getValidators
     somaContract.getValidators();
